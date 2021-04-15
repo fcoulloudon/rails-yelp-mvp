@@ -11,6 +11,9 @@ Rails.application.routes.draw do
     # Create restaurant
     post "restaurants", to: "restaurants#create"
 
+    # Delete restaurant
+    delete "restaurants/:id", to: "restaurants#destroy"
+
     resources :restaurants do
       resources :reviews, only: [ :new, :show, :create ]
     end
